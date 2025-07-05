@@ -45,10 +45,10 @@ async def token_handler(client, message):
 
     except IndexError:
         await message.reply("ℹ️ Usage:\n`/token your_token_here`")
-        @Client.on_message(filters.command("videos"))
+@Client.on_message(filters.command("videos"))
 async def video_list(client, message):
     try:
-        from utils.signer import get_signed_links  # Make sure signer.py exists
+          # Make sure signer.py exists
         with open("token.txt", "r") as f:
             token = f.read().strip()
 
