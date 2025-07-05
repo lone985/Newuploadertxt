@@ -104,3 +104,35 @@ async def progress_bar(current, total, reply, start): #NIKHIL SAINI BOTS
                 await reply.edit(f'`╭──⌯═════𝐁𝐨𝐭 𝐒𝐭𝐚𝐭𝐢𝐜𝐬══════⌯──╮\n├⚡ {progress_bar}\n├⚙️ Progress ➤ | {perc} |\n├🚀 Speed ➤ | {sp} |\n├📟 Processed ➤ | {cur} |\n├🧲 Size ➤ | {tot} |\n├🕑 ETA ➤ | {eta} |\n╰─═══✨🦋{CREDIT}🦋✨═══─╯`') 
             except FloodWait as e: #NIKHIL SAINI BOTS
                 time.sleep(e.x) #NIKHIL SAINI BOTS 
+import jwt, time, base64, hmac, hashlib
+
+def get_signed_links(token):
+    decoded = jwt.decode(token, options={"verify_signature": False})
+    user_id = decoded['id']
+
+    # Replace with real video IDs if needed
+    video_ids = [
+        "e052cb0fa47b71eea8175401b1ea0102",
+        "60139c1da7ae71eea83a5401b1ea0102"
+    ]
+
+    signed_links = []
+
+    for vid in video_ids:
+        base_url = f"https://media-cdn.classplusapp.com/alisg-cdn-a.classplusapp.com/{vid}/master.m3u8"
+        expiry = int(time.time()) + 600
+        url_prefix = base_url.encode()
+        encoded_url = base64.urlsafe_b64encode(url_prefix).decode()
+
+        # 🔐 Placeholder — real Classplus uses private key server-side
+        hdnts = f"URLPrefix={encoded_url}~Expires={expiry}"
+        hmac_sig = hmac.new(b'your-secret-key', hdnts.encode(), hashlib.sha256).hexdigest()
+
+        full_link = f"{base_url}?key={user_id}&hdnts={hdnts}~hmac={hmac_sig}&userIds={user_id}"
+
+        signed_links.append({
+            "title": f"Video ID: {vid[:8]}...",
+            "signed_url": full_link
+        })
+
+    return signed_links
