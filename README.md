@@ -1,61 +1,59 @@
 <h1 align="center">
-  ✨ SAINI DRM Bot ✨
+  ✨ Ansar Ahmad ✨
 </h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&pause=1000&color=00F7FF&center=true&vCenter=true&width=435&lines=Welcome+to+DRM+Bot+by+@nikhil.saini.khe" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&pause=1000&color=00F7FF&center=true&vCenter=true&width=435&lines=Welcome+to+Ansar's+DRM+Bot" alt="Typing SVG" />
 </p>
 
 ---
 
-> 🔐 **Note:** CP DRM supported — Minimum quality **360p**  
-> 🚫 **Do not remove the credit tag**
+> 🔐 **Note:** This bot supports Classplus DRM video downloads  
+> 📥 **Minimum Quality Supported:** 360p  
+> 🛑 Please use ethically for personal educational purposes only
 
 ---
 
 ## 📜 Commands
 
-| Command | Description |
-|---------|-------------|
-| `/start` | Start the bot |
-| `/stop`  | Stop the bot |
-| `/help`  | Show help message |
+| Command   | Description           |
+|-----------|-----------------------|
+| `/start`  | Start the bot         |
+| `/stop`   | Stop the bot          |
+| `/help`   | Show help information |
 
 ---
 
-## 🚀 Deployment Process
+## 🚀 Deployment Guide
 
-🎬 **Watch Full Deployment Tutorial:**  
-[![YouTube Video](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/PYDtSTM6w44?si=noKPl7o4iU9SR_TO)
+🎬 **Deployment Steps:**
 
-### Step-by-Step:
-1. **Fork** the Repository  
-2. **Edit `vars.py`** — Fill in your `API_ID` and `API_HASH`  
-3. **Edit `README.md`** — Change the deploy button links to point to your own fork  
-4. Choose any platform and **Deploy** directly using the buttons below:
+1. **Fork this Repository**
+2. **Edit `vars.py`** with your API credentials (`API_ID`, `API_HASH`, `BOT_TOKEN`)
+3. Deploy using any of the following platforms:
 
 ---
 
-## 📦 Deploy via Buttons
+## 🔘 Deploy Directly
 
-[![Deploy to Render](https://img.shields.io/badge/Deploy%20to-Render-blue?style=for-the-badge&logo=render)](https://render.com/deploy)  
-[![Deploy to Heroku](https://img.shields.io/badge/Deploy%20to-Heroku-purple?style=for-the-badge&logo=heroku)](https://www.heroku.com/deploy?template=https://github.com/nikhilsainiop/saini-txt-direct)  
-[![Deploy to Koyeb](https://img.shields.io/badge/Deploy%20to-Koyeb-black?style=for-the-badge&logo=koyeb)](https://app.koyeb.com/deploy?name=saini-txt-direct&repository=nikhilsainiop%2FSaini-txt-direct&branch=main&instance_type=free&instances_min=0)
+[![Deploy to Render](https://img.shields.io/badge/Deploy%20to-Render-blue?style=for-the-badge&logo=render)](https://render.com/deploy)
 
----
+[![Deploy to Heroku](https://img.shields.io/badge/Deploy%20to-Heroku-purple?style=for-the-badge&logo=heroku)](https://heroku.com/deploy?template=https://github.com/YOUR_USERNAME/YOUR_REPO_NAME)
 
-## 🤖 Bot Usernames
-
-- [@saini_contact_bot](https://t.me/saini_contact_bot)
-- [@saini_file_store_bot](https://t.me/saini_file_store_bot)
+[![Deploy to Koyeb](https://img.shields.io/badge/Deploy%20to-Koyeb-black?style=for-the-badge&logo=koyeb)](https://app.koyeb.com/deploy?name=ansar-drm-bot&repository=YOUR_USERNAME%2FYOUR_REPO_NAME&branch=main)
 
 ---
 
-## 📂 Original Repositories
+## 🤖 Bot Username
 
-- 🔗 [nikhilsainiop/saini-txt-direct](https://github.com/nikhilsainiop/saini-txt-direct)
-- 🔗 [cyberseller999/saini-txt-direct](https://github.com/cyberseller999/saini-txt-direct)
+- [@your_bot_username](https://t.me/your_bot_username)
 
 ---
 
-> 👨‍💻 Created with ❤️ by [@nikhil.saini.khe](https://instagram.com/nikhil.saini.khe)
+## 📂 Developer
+
+- 👨‍💻 Developed & Maintained by: **Ansar Ahmad**
+
+---
+
+> ⚠️ This is a personal bot created by Ansar Ahmad. Please do not fork and redistribute without permission.
