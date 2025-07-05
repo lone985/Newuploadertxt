@@ -1,5 +1,9 @@
 import os
+
 import re
+def clean_filename(name):
+    return re.sub(r'[\\/*?:"<>|]', "", name) 
+
 import sys
 import m3u8
 import json
@@ -327,8 +331,7 @@ async def txt_handler(bot: Client, m: Message):
             url = "https://" + Vxy
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "")
-            name = f'{name1[:60]} {CREDIT}'
-
+            name = clean_filename(name1[:60])
             if "youtube.com" in url or "youtu.be" in url:
                 cmd = f'yt-dlp -x --audio-format mp3 --cookies {cookies_file_path} "{url}" -o "{name}.mp3"'
                 print(f"Running command: {cmd}")
