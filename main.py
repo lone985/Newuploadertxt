@@ -28,6 +28,36 @@ from vars import API_ID, API_HASH, BOT_TOKEN, OWNER, CREDIT, AUTH_USERS
 from aiohttp import ClientSession
 from subprocess import getstatusoutput
 from pytube import YouTube
+from pyrogram import filters  # Make sure this is already imported
+
+@Client.on_message(filters.command("token"))
+async def token_handler(client, message):
+    try:
+        token = message.text.split(" ", 1)[1].strip()
+        if not token.startswith("ey"):
+            return await message.reply("❌ Invalid token format.")
+
+        with open("token.txt", "w") as f:
+            f.write(token)
+
+        await message.reply("✅ Token saved. Send /videos to list available videos.")
+
+    except IndexError:
+        await message.reply("ℹ️ Usage:\n`/token your_token_here`")
+        @Client.on_message(filters.command("videos"))
+async def video_list(client, message):
+    try:
+        from utils.signer import get_signed_links  # Make sure signer.py exists
+        with open("token.txt", "r") as f:
+            token = f.read().strip()
+
+        videos = get_signed_links(token)
+
+        for v in videos:
+            await message.reply(f"🎬 {v['title']}\n🔗 {v['signed_url']}")
+
+    except Exception as e:
+        await message.reply(f"❌ Error while listing videos:\n`{str(e)}`")
 from aiohttp import web
 import random
 from pyromod import listen
@@ -270,7 +300,7 @@ async def yt2m_handler(bot: Client, m: Message):
         audio_title = response.json().get('title', 'YouTube Video')
         name = f'{audio_title[:60]} {CREDIT}'        
         if "youtube.com" in url or "youtu.be" in url:
-            cmd = f'yt-dlp -x --audio-format mp3 --cookies {cookies_file_path} "{url}" -o "{name}.mp3"'
+            cmd = f'yt-dlp -x --audio-format mp3 --cookies {cookies_file_path} "{url}" --add-header "Referer: https://player.classplusapp.com" --add-header "User-Agent: Mozilla/5.0" -o "{name}.mp3"'
             print(f"Running command: {cmd}")
             os.system(cmd)
             if os.path.exists(f'{name}.mp3'):
